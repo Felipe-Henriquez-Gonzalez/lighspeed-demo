@@ -1,0 +1,39 @@
+---
+- name: validar version de sistema operativo y actualizar 
+  hosts: all
+  become: yes
+
+  tasks:
+  #chequear que la version del sistema operativo sea rhel 9 & actualizar kernel en vivo & actualizar parches de seguridad
+  # Content suggestion provided by Ansible Lightspeed
+  - name: Chequear que la version del sistema operativo sea rhel 9
+    ansible.builtin.fail:
+      msg: Sistema operativo no soportado
+    when: ansible_distribution_major_version != "9"
+
+  - name: Actualizar kernel en vivo
+    ansible.builtin.package:
+      name: kernel
+      state: latest
+
+  - name: Actualizar parches de seguridad
+    ansible.builtin.package:
+      name:
+        - kernel-ml
+        - kernel-ml-devel
+        - kernel-ml-headers
+        - kernel-ml-headers-devel
+        - kernel-ml-headers-extra
+        - kernel-ml-headers-extra-devel
+        - kernel-ml-headers-extra-extra
+        - kernel-ml-headers-extra-extra-devel
+        - kernel-ml-headers-extra-extra-extra
+        - kernel-ml-headers-extra-extra-extra-devel
+        - kernel-ml-headers-extra-extra-extra-extra-devel
+        - kernel-ml-headers-extra-extra-extra-extra-devel
+        - kernel-ml-headers-extra-extra-extra-extra-devel-modules
+        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules
+        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules-modules-devel
+        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules-modules-devel-modules
+        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules
+      state: "{{ _state_ }}"
