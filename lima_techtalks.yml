@@ -16,24 +16,3 @@
       name: kernel
       state: latest
 
-  - name: Actualizar parches de seguridad
-    ansible.builtin.package:
-      name:
-        - kernel-ml
-        - kernel-ml-devel
-        - kernel-ml-headers
-        - kernel-ml-headers-devel
-        - kernel-ml-headers-extra
-        - kernel-ml-headers-extra-devel
-        - kernel-ml-headers-extra-extra
-        - kernel-ml-headers-extra-extra-devel
-        - kernel-ml-headers-extra-extra-extra
-        - kernel-ml-headers-extra-extra-extra-devel
-        - kernel-ml-headers-extra-extra-extra-extra-devel
-        - kernel-ml-headers-extra-extra-extra-extra-devel
-        - kernel-ml-headers-extra-extra-extra-extra-devel-modules
-        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules
-        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules-modules-devel
-        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules-modules-devel-modules
-        - kernel-ml-headers-extra-extra-extra-extra-devel-modules-modules
-      state: "{{ _state_ }}"
