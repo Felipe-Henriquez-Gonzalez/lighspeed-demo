@@ -1,0 +1,25 @@
+---
+- name: Actualizar paquetes de seguridad en RHEL
+  hosts: "{{ servers }}"
+  become: yes
+  tasks:
+    - name: Actualizar la lista de paquetes
+      yum:
+        name: '*'
+        state: latest
+        security: yes
+      register: update_result
+
+    - name: Reiniciar si es necesario
+      reboot:
+        when: update_result.changed
+
+    - name: Mostrar resultado de la actualización
+      debug:
+        msg: "Los paquetes de seguridad han sido actualizados."
+      when: not update_result.changed
+
+    - name: Mostrar resultado de la actualización con reinicio
+      debug:
+        msg: "Los paquetes de seguridad han sido actualizados y el sistema ha sido reiniciado."
+      when: update_result.changed
