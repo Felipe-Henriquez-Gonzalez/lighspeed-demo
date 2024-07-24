@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
     - name: Read CSV file
-      read_csv:
+      ansible.builtin.csvfile:
         path: https://github.com/Felipe-Henriquez-Gonzalez/lighspeed-demo/blob/main/users.csv
       register: user_list
 
