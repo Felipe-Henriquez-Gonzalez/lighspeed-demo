@@ -4,7 +4,7 @@
   gather_facts: no
   tasks:
     - name: Create AD users
-      community.windows.win_domain_user:
+      microsoft.ad.user:
         name: "{{ item.username }}"
         given_name: "{{ item.firstname }}"
         surname: "{{ item.lastname }}"
