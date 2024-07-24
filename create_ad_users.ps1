@@ -11,7 +11,7 @@ foreach ($user in $users) {
     $lastname = $user.lastname
     $password = (ConvertTo-SecureString $user.password -AsPlainText -Force)
     $email = $user.email
-    $userPrincipalName = "$username@yourdomain.com"
+    $userPrincipalName = "$username@demo.local"
 
     # Create the user
     New-ADUser `
