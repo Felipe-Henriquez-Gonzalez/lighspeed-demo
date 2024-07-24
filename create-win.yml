@@ -5,7 +5,7 @@
   tasks:
     - name: Read CSV file
       read_csv:
-        path: /path/to/users.csv
+        path: https://github.com/Felipe-Henriquez-Gonzalez/lighspeed-demo/blob/main/users.csv
       register: user_list
 
     - name: Create AD users
