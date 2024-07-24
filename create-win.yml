@@ -5,15 +5,14 @@
   tasks:
     - name: Create AD users
       microsoft.ad.user:
-        name: "{{ item.username }}"
-        given_name: "{{ item.firstname }}"
-        surname: "{{ item.lastname }}"
-        password: "{{ item.password }}"
-        user_principal_name: "{{ item.username }}@yourdomain.com"
-        email: "{{ item.email }}"
+        name: "{{ username }}"
+        given_name: "{{ firstname }}"
+        surname: "{{ lastname }}"
+        password: "{{ password }}"
+        user_principal_name: "{{ username }}.{{ lastname }}"
+        email: "{{ email }}"
         state: present
         enabled: yes
         password_never_expires: yes
         require_password_change: no
-      loop: "{{ user_list.list }}"
       delegate_to: remote_windows_host
