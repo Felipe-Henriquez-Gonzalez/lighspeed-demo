@@ -1,5 +1,5 @@
 ---
-- name: Create Active Directory users from CSV using PowerShell
+- name: Create Active Directory users from CSV 
   hosts: windows
   gather_facts: no
   tasks:
