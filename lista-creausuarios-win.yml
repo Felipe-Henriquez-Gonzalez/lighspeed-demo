@@ -1,6 +1,6 @@
 ---
 - name: Crear usuarios 
-  hosts: rhel9.local
+  hosts: demo.local
   gather_facts: no
 
   tasks:
