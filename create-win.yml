@@ -1,6 +1,6 @@
 ---
 - name: Create Active Directory users 
-  hosts: windows
+  hosts: Domain_controller
   gather_facts: no
   tasks:
     - name: Create AD users
