@@ -1,0 +1,15 @@
+---
+- name: Crear usuarios 
+  hosts: demo.local
+  gather_facts: no
+
+  tasks:
+    - name: agrega datos a usuarios
+      community.general.read_csv:
+        path: /root/modifica_users.csv
+      register: csv_content
+
+    - name: Modificando Usuarios
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ csv_content.list }}"
