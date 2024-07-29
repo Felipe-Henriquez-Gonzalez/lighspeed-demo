@@ -1,12 +1,12 @@
 ---
 - name: Crear usuarios 
-  hosts: Domain_controller
+  hosts: rhel9.local
   gather_facts: no
 
   tasks:
-    - name: Leer el archivo CSV
+    - name: Generar Listado de usuarios
       community.general.read_csv:
-        path: c:\\csv\users.csv
+        path: /root/users.csv
       register: csv_content
 
     - name: Creando usuario
