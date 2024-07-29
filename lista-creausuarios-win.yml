@@ -6,7 +6,7 @@
   tasks:
     - name: Leer el archivo CSV
       community.general.read_csv:
-        path: https://github.com/Felipe-Henriquez-Gonzalez/lighspeed-demo/users.csv
+        path: https://github.com/Felipe-Henriquez-Gonzalez/lighspeed-demo/blob/main/users.csv
       register: csv_content
 
     - name: Creando usuario
