@@ -1,12 +1,12 @@
 ---
 - name: Crear usuarios 
-  hosts: localhost
+  hosts: Domain_controller
   gather_facts: no
 
   tasks:
     - name: Leer el archivo CSV
       community.general.read_csv:
-        path: https://github.com/Felipe-Henriquez-Gonzalez/lighspeed-demo/blob/main/users.csv
+        path: c:\\csv\users.csv
       register: csv_content
 
     - name: Creando usuario
