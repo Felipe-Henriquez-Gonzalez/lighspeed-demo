@@ -1,0 +1,7 @@
+---
+- name: creacion usuario
+  hosts: Domain_controller
+  tasks:
+    - name: Execute PowerShell script
+      win_shell: |
+        New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "johndoe" -UserPrincipalName "johndoe@example.com" -Path "OU=Users,DC=example,DC=com" -AccountPassword (ConvertTo-SecureString "Password123!" -AsPlainText -Force) -Enabled $true
