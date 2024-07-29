@@ -4,4 +4,4 @@
   tasks:
     - name: Execute PowerShell script
       win_shell: |
-        New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "johndoe" -UserPrincipalName "johndoe@example.com" -Path "OU=Users,DC=demo,DC=local" -AccountPassword "Password123!" -AsPlainText -Force -Enabled $true
+        New-ADUser -Name "John Doe" -GivenName "John" -Surname "Doe" -SamAccountName "johndoe" -UserPrincipalName "johndoe@example.com" -Path "OU=Users,DC=demo,DC=local" -AccountPassword Password123! -AsPlainText -Force -Enabled $true
